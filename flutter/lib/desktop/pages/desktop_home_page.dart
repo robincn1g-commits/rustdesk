@@ -147,33 +147,35 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                 Expanded(child: Container())
               ],
             ),
-            if (isOutgoingOnly)
-              Positioned(
-                bottom: 6,
-                left: 12,
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: InkWell(
-                    child: Obx(
-                      () => Icon(
-                        Icons.settings,
-                        color: _editHover.value
-                            ? textColor
-                            : Colors.grey.withOpacity(0.5),
-                        size: 22,
-                      ),
-                    ),
-                    onTap: () => {
-                      if (DesktopSettingPage.tabKeys.isNotEmpty)
-                        {
-                          DesktopSettingPage.switch2page(
-                              DesktopSettingPage.tabKeys[0])
-                        }
-                    },
-                    onHover: (value) => _editHover.value = value,
-                  ),
-                ),
-              )
+// ====== 注释开始：设置齿轮按钮 ======           
+//         if (isOutgoingOnly)
+//            Positioned(
+//              bottom: 6,
+//              left: 12,
+//              child: Align(
+//                alignment: Alignment.centerLeft,
+//                child: InkWell(
+//                  child: Obx(
+//                    () => Icon(
+//                      Icons.settings,
+//                      color: _editHover.value
+//                          ? textColor
+//                          : Colors.grey.withOpacity(0.5),
+//                      size: 22,
+//                    ),
+//                  ),
+//                  onTap: () => {
+//                    if (DesktopSettingPage.tabKeys.isNotEmpty)
+//                      {
+//                        DesktopSettingPage.switch2page(
+//                            DesktopSettingPage.tabKeys[0])
+//                      }
+//                  },
+//                  onHover: (value) => _editHover.value = value,
+//                ),
+//              ),
+//            )
+// ====== 注释结束 ======
           ],
         ),
       ),
