@@ -224,7 +224,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                                   ?.color
                                   ?.withOpacity(0.5)),
                         ).marginOnly(top: 5),
-                        buildPopupMenu(context)
+//                      buildPopupMenu(context)  //隐藏更多按键
                       ],
                     ),
                   ),
@@ -361,7 +361,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                           ),
                           onHover: (value) => refreshHover.value = value,
                         ).marginOnly(right: 8, top: 4),
-                      if (!bind.isDisableSettings())
+// 始终显示编辑按钮，点击直接弹出密码设置对话框                      
                         InkWell(
                           child: Tooltip(
                             message: translate('Change Password'),
@@ -375,8 +375,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
                               ).marginOnly(right: 8, top: 4),
                             ),
                           ),
-                          onTap: () => DesktopSettingPage.switch2page(
-                              SettingsTabKey.safety),
+                          onTap: () => setPasswordDialog(),
                           onHover: (value) => editHover.value = value,
                         ),
                     ],
